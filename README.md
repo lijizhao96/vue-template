@@ -13,6 +13,7 @@
     - @vitejs/plugin-legacy：兼容低版本浏览器
     - rollup-plugin-visualizer：打包文件可视化分析，默认在主目录生成可视化stats.html文件
 + 打包文件分包处理
++ Axios GET/POST 等请求的封装，页面直接使用 http.get/http.post/http.axios
 
 ## Project Setup
 

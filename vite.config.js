@@ -5,7 +5,6 @@ import createVitePlugins from './vite/plugins'
 export default ({ mode, command }) => {
   const env = loadEnv(mode, process.cwd())
   return defineConfig({
-    base: './',
     server: {
       host: '0.0.0.0',
       open: true,
