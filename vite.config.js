@@ -12,7 +12,7 @@ export default ({ mode, command }) => {
       port: 9000,
       proxy: {
         "/api": {
-          target: 'http://47.243.202.3:9901',
+          target: 'http://xxx',
           rewrite: (path) => path.replace("/api", ""),
         }
       }
@@ -27,11 +27,11 @@ export default ({ mode, command }) => {
         }
       },
       rollupOptions: {
-        output: { //静态资源分类打包
+        output: {
           chunkFileNames: 'static/js/[name]-[hash].js',
           entryFileNames: 'static/js/[name]-[hash].js',
           assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
-          manualChunks(id) { //静态资源分拆打包
+          manualChunks(id) { // 静态资源分拆打包
             if (id.includes('node_modules')) {
               return id.toString().split('node_modules/.pnpm/')[1].split('/')[0].toString();
             }
