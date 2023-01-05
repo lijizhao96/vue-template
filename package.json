@@ -1,0 +1,29 @@
+{
+  "name": "vue",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build-dev": "vite build --mode testing",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.2.0",
+    "pinia": "^2.0.26",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^3.0.1",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "rollup-plugin-visualizer": "^5.8.3",
+    "sass": "^1.56.1",
+    "terser": "^5.16.1",
+    "unplugin-auto-import": "^0.12.0",
+    "unplugin-vue-components": "^0.22.11",
+    "vite": "^3.2.4",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-html": "^3.2.0"
+  }
+}
