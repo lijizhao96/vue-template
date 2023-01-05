@@ -1,4 +1,4 @@
-# 一个开箱即用的Vue3.0 + Vite + Pnpm的脚手架
+# 一个开箱即用的Vue3.0的脚手架
 
 + Vue3.0 + Pinia + Vite + Pnpm
 + 环境变量处理 本地/测试/生产
