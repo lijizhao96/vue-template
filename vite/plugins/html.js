@@ -15,7 +15,7 @@ export default function createHtml(env, isBuild) {
                 copyrightScript: `
                 <script>
                     console.info('%c由%cTiam%c提供技术支持', '${copyright_sub_style}', '${copyright_main_style}', '${copyright_sub_style}');
-                    console.log(${copyright_sub_time})
+                    console.log(Build Time: ${copyright_sub_time})
                 </script>
                 `
             }

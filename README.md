@@ -1,7 +1,10 @@
 # 一个开箱即用的Vue3.0的脚手架
 
-+ Vue3.0 + Pinia + Vite + Pnpm
-+ 环境变量处理 本地/测试/生产
++ Vue3.0 + Pinia + Sass + Vite + Pnpm
++ 环境变量处理
+    - development：本地
+    - testing: 测试
+    - production：生产
 + 常用Vite插件处理
     - unplugin-auto-import：自动导入Vue常用的方法
     - unplugin-vue-components：自动导入components文件夹内封装的组件页面直接使用
