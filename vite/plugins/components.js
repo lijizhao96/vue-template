@@ -1,11 +1,11 @@
 import components from 'unplugin-vue-components/vite'
-import { VantResolver } from 'unplugin-vue-components/resolvers'
+import { VantResolver } from '@vant/auto-import-resolver'
 
 export default function createComponents() {
-    return components({
-        dirs: ['src/components'],
-        include: [/\.vue$/, /\.vue\?vue/, /\.jsx$/],
-        resolvers: [VantResolver()],
-        dts: false
-    })
+  return components({
+    dirs: ['src/components'],
+    resolvers: [VantResolver()],
+    include: [/\.vue$/, /\.vue\?vue/, /\.tsx$/],
+    dts: './src/types/components.d.ts',
+  })
 }

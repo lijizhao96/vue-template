@@ -1,41 +1,35 @@
-# 一个开箱即用的Vue3.0的脚手架
+# 开发环境
+开发前，需要在本地依次安装好
+- Node.js v18.17.1
+- pnpm
+- Git
+- Visual Studio Code。
 
-+ Vue3.0 + Pinia + Sass + Vite + Pnpm
-+ 环境变量处理
-    - development：本地
-    - testing: 测试
-    - production：生产
-+ 常用Vite插件处理
-    - unplugin-auto-import：自动导入Vue常用的方法
-    - unplugin-vue-components：自动导入components文件夹内封装的组件页面直接使用
-    - vite-plugin-compression：打包文件压缩，集成gzip/br压缩
-    - vite-plugin-html：html文件上ejs支持
-    - @vitejs/plugin-legacy：兼容低版本浏览器
-    - rollup-plugin-visualizer：打包文件可视化分析，默认在主目录生成可视化stats.html文件
-+ 打包文件分包处理
-+ Axios GET/POST 等请求的封装，页面直接使用 http.get/http.post/http.axios
+然后在 Visual Studio Code 里安装好以下扩展：
 
-## Project Setup
+- EditorConfig for VS Code
+- DotENV
+- ESLint
+- stylelint
+- Vue Language Features
 
-```sh
-pnpm install
-```
+在 Visual Studio Code 里打开源码的文件夹，右下角会自动提示需要安装的依赖，直接点击安装即可。
 
-### Compile and Hot-Reload for Development
+# 技术栈
 
-```sh
-pnpm dev
-```
+了解并熟悉框架使用到的技术栈，能让你使用本框架更得心应手。
 
-### Compile and Minify for Testing
+- Vite
+- Vue 3
+- Vue Router 4
+- Pinia
+- Vant
 
-```sh
-pnpm build-dev
-```
-
-### Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
+# Start
+`pnpm install`
+# Dev
+`pnpm run dev`
+# Build Test
+`pnpm run build:test`
+# Build Prod
+`pnpm run build`

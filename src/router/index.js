@@ -1,19 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import routes from '@/router/modules'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'index',
-      component: () => import('@/views/Home/index.vue')
-    }
-  ]
+  history: createWebHistory(),
+  routes,
 })
 
-router.beforeEach((to, from, next) => {
-  document.title = to.name
+router.beforeEach(async (_, __, next) => {
   next()
+})
+
+router.afterEach((_, __) => {
+
 })
 
 export default router

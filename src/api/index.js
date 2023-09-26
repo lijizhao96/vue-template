@@ -1,41 +1,33 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = import.meta.env.VITE_APP_API_BASEURL
-axios.defaults.timeout = 20 * 1000
+import useUserStore from '@/store/modules/user'
 
-axios.defaults.headers['Version'] = '1.0.0'
-axios.defaults.headers.post['Content-Type'] = 'application/json'
+const api = axios.create({
+  baseURL: (import.meta.env.DEV && import.meta.env.VITE_OPEN_PROXY === 'true') ? '/proxy/' : import.meta.env.VITE_APP_API_BASEURL,
+  timeout: 1000 * 60,
+  responseType: 'json',
+})
 
-// 请求拦截
-axios.interceptors.request.use(
-  config => {
-    const t = new Date().valueOf()
-    config.headers['t'] = t
-    return config
+api.interceptors.request.use(
+  (request) => {
+    const userStore = useUserStore()
+    // 设置请求头
+    if (request.headers) {
+      if (userStore.isLogin) {
+        request.headers.Token = userStore.token
+      }
+    }
+    return request
   },
-  error => {
-    return error
-  }
 )
 
-// 响应拦截
-axios.interceptors.response.use(
-  ({ data }) => {
-    return Promise.resolve(data)
+api.interceptors.response.use(
+  (response) => {
+    return Promise.resolve(response.data)
   },
-  err => {
-    return Promise.reject(err)
-  }
+  (error) => {
+    return Promise.reject(error)
+  },
 )
 
-export default {
-  get: (url, params) => {
-    return axios.get(url, { params })
-  },
-
-  post: (url, params) => {
-    return axios.post(url, params)
-  },
-
-  axios
-}
+export default api
